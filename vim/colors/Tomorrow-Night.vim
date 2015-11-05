@@ -242,25 +242,27 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Vim Highlighting
 	call <SID>X("Normal", s:foreground, s:background, "")
 	call <SID>X("LineNr", s:selection, "", "")
-	call <SID>X("NonText", s:selection, "", "")
+	call <SID>X("NonText", s:selection, "", "none")
 	call <SID>X("SpecialKey", s:selection, "", "")
 	call <SID>X("Search", s:background, s:yellow, "")
 	call <SID>X("TabLine", s:window, s:foreground, "reverse")
+	call <SID>X("TabLineSel", "", "", "none")
 	call <SID>X("TabLineFill", s:window, s:foreground, "reverse")
 	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
 	call <SID>X("StatusLineNC", s:window, s:foreground, "reverse")
 	call <SID>X("VertSplit", s:window, s:window, "none")
 	call <SID>X("Visual", "", s:selection, "")
+	call <SID>X("VisualNOS", "", "", "none,underline")
 	call <SID>X("Directory", s:blue, "", "")
-	call <SID>X("ModeMsg", s:green, "", "")
-	call <SID>X("MoreMsg", s:green, "", "")
-	call <SID>X("Question", s:green, "", "")
+	call <SID>X("ModeMsg", s:green, "", "none")
+	call <SID>X("MoreMsg", s:green, "", "none")
+	call <SID>X("Question", s:green, "", "none")
 	call <SID>X("WarningMsg", s:red, "", "")
 	call <SID>X("MatchParen", "", s:selection, "")
 	call <SID>X("Folded", s:comment, s:background, "")
 	call <SID>X("FoldColumn", "", s:background, "")
 	if version >= 700
-		call <SID>X("CursorLine", "", s:line, "none")
+		call <SID>X("CursorLine", "", s:background, "none")
 		call <SID>X("CursorColumn", "", s:line, "none")
 		call <SID>X("PMenu", s:foreground, s:selection, "none")
 		call <SID>X("PMenuSel", s:foreground, s:selection, "reverse")
@@ -273,9 +275,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Standard Highlighting
 	call <SID>X("Comment", s:comment, "", "")
 	call <SID>X("Todo", s:comment, s:background, "")
-	call <SID>X("Title", s:comment, "", "")
+	call <SID>X("Title", s:comment, "", "none")
 	call <SID>X("Identifier", s:red, "", "none")
-	call <SID>X("Statement", s:foreground, "", "")
+	call <SID>X("Statement", s:foreground, "", "none")
 	call <SID>X("Conditional", s:foreground, "", "")
 	call <SID>X("Repeat", s:foreground, "", "")
 	call <SID>X("Structure", s:purple, "", "")
@@ -390,9 +392,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Diff Highlighting
 	call <SID>X("diffAdd", "", "4c4e39", "")
-	call <SID>X("diffDelete", s:background, s:red, "")
+	call <SID>X("diffDelete", s:background, s:red, "none")
 	call <SID>X("diffChange", "", "2B5B77", "")
-	call <SID>X("diffText", s:line, s:blue, "")
+	call <SID>X("diffText", s:line, s:blue, "none")
 
 	" ShowMarks Highlighting
 	call <SID>X("ShowMarksHLl", s:orange, s:background, "none")
@@ -496,7 +498,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Git
 	call <SID>X("diffAdded", s:green, "", "")
 	call <SID>X("diffRemoved", s:red, "", "")
-	call <SID>X("gitcommitSummary", "", "", "bold")
+	call <SID>X("gitcommitSummary", "", "", "")
 
 	" Delete Functions
 	delf <SID>X
