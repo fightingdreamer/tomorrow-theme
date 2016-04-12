@@ -271,6 +271,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	end
 	if version >= 703
 		call <SID>X("ColorColumn", "", s:line, "none")
+		call <SID>X("Error", s:red, s:background, "none")
 	end
 
 	" Standard Highlighting
