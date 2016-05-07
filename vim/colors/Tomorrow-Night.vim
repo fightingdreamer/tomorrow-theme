@@ -6,6 +6,7 @@
 " Default GUI Colours
 let s:foreground = "c5c8c6"
 let s:background = "1d1f21"
+let s:statusline = "191B1D"
 let s:selection = "373b41"
 let s:line = "282a2e"
 let s:comment = "969896"
@@ -23,6 +24,7 @@ if !has("gui_running")
 	let s:background = "303030"
 	let s:window = "5e5e5e"
 	let s:line = "3a3a3a"
+	let s:statusline = "262626"
 	let s:selection = "585858"
 end
 
@@ -248,9 +250,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("TabLine", s:window, s:foreground, "reverse")
 	call <SID>X("TabLineSel", "", "", "none")
 	call <SID>X("TabLineFill", s:window, s:foreground, "reverse")
-	call <SID>X("StatusLine", s:background, s:foreground, "reverse")
-	call <SID>X("StatusLineNC", s:background, s:window, "reverse")
-	call <SID>X("VertSplit", s:window, s:window, "none")
+	call <SID>X("StatusLine", s:statusline, s:foreground, "reverse")
+	call <SID>X("StatusLineNC", s:statusline, s:window, "reverse")
+	call <SID>X("VertSplit", s:window, "none", "none")
 	call <SID>X("Visual", "", s:selection, "")
 	call <SID>X("VisualNOS", "", "", "none,underline")
 	call <SID>X("Directory", s:blue, "", "")
